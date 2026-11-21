@@ -1,0 +1,24 @@
+name: Tell me when this ships
+description: Reply on a GitHub issue when a stable npm release includes the fix's source commit.
+author: Replio
+branding:
+  icon: package
+  color: red
+inputs:
+  package:
+    description: Public npm package to watch. Defaults to the name in the source repository's root package.json.
+    required: false
+  version:
+    description: Exact stable version to check. Defaults to the package's latest dist-tag.
+    required: false
+  source-repository:
+    description: GitHub owner/repository from the npm package's repository field. Defaults to the workflow repository.
+    required: false
+    default: ${{ github.repository }}
+  token:
+    description: The repository's built-in GitHub Actions token.
+    required: false
+    default: ${{ github.token }}
+runs:
+  using: node24
+  main: src/index.mjs
