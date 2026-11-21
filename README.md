@@ -2,7 +2,7 @@
 
 A free GitHub Action that replies to an issue when its fix reaches npm. The reply includes the published package version, the comparison proving the fix is in its source history, and the exact install command.
 
-[See the bot reply on a real issue](https://github.com/chaseakub/when-shipped-demo/issues/1) · [See the test against the published packages](https://github.com/chaseakub/when-shipped-demo/actions/workflows/proof.yml)
+[See the bot reply on a real issue](https://github.com/chaseakub/when-shipped-demo/issues/1#issuecomment-7053855864) · [See the test against the published packages](https://github.com/chaseakub/when-shipped-demo/actions/workflows/proof.yml)
 
 ## Install
 
