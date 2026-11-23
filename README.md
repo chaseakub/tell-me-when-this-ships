@@ -15,6 +15,16 @@ curl -fsSL https://raw.githubusercontent.com/chaseakub/tell-me-when-this-ships/v
 
 That's the entire install for a public package named in your root `package.json`. GitHub supplies the token. The Action runs on GitHub's runner and needs no account, npm credentials, checkout, or dependencies from your project.
 
+## For coding agents
+
+The [npm-release-notifier skill](skills/npm-release-notifier/SKILL.md) helps an agent answer “Has this pull request shipped to npm?” or set up a reply on the original issue. Run this in the project where your agent works.
+
+```sh
+npx skills add chaseakub/tell-me-when-this-ships --skill npm-release-notifier
+```
+
+For example, ask “Has Marked PR #4200 reached a stable npm version?” The agent can check that with public data. If you ask it to set up future notifications, it uses the workflow above.
+
 ## Use it
 
 On the issue where someone is waiting, a maintainer with write access comments:

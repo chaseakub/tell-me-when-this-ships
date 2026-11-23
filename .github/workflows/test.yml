@@ -13,3 +13,12 @@ jobs:
         with:
           node-version: 24
       - run: npm test
+      - name: Verify the skill installs in a clean Codex project
+        working-directory: ${{ runner.temp }}
+        env:
+          DISABLE_TELEMETRY: '1'
+        run: |
+          mkdir skill-consumer
+          cd skill-consumer
+          npx --yes skills@1.9.0 add "$GITHUB_WORKSPACE" --skill npm-release-notifier --agent codex -y
+          cmp "$GITHUB_WORKSPACE/skills/npm-release-notifier/SKILL.md" .agents/skills/npm-release-notifier/SKILL.md
